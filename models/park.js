@@ -57,5 +57,9 @@ Park.prototype.calculateVisitorsPerYear = function(){
     return this.calculateVisitorsPerDay() * 365;
 }
 
+Park.prototype.calculateRevenuePerYear = function(){
+  return this.calculateVisitorsPerYear() * this.price;
+}
+
 
 module.exports = Park;
