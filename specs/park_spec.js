@@ -8,6 +8,7 @@ describe('Park', function() {
 
   beforeEach(function () {
     park = new Park('Jurasic World', 100);
+    dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
   });
 
   it('should have a name', function() {
@@ -25,7 +26,11 @@ describe('Park', function() {
     assert.strictEqual(actual, 0);
   });
 
-  xit('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function(){
+    park.addDinosaur(dinosaur);
+    const actual = park.dinosaurs.length;
+    assert.strictEqual(actual, 1);
+  });
 
   xit('should be able to remove a dinosaur from its collection');
 
