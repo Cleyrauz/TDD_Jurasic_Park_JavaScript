@@ -38,12 +38,20 @@ Park.prototype.findBySpecies = function(species){
   return result;
 };
 
-Park.prototype.removeAllOfSpecies = function (species) {
+Park.prototype.removeAllOfSpecies = function(species) {
   foundDinosaurs = this.findBySpecies(species);
   for (let dinosaurToDelete of foundDinosaurs){
     this.removeDinosaur(dinosaurToDelete);
   }
 };
+
+Park.prototype.calculateVisitorsPerDay = function(){
+visitorsPerDay = 0;
+for(let dinosaur of this.dinosaurs){
+  visitorsPerDay += dinosaur.guestsAttractedPerDay;
+}
+return visitorsPerDay;
+}
 
 
 module.exports = Park;

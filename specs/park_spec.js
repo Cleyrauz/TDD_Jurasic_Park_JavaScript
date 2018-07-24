@@ -68,4 +68,12 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, 1);
   });
 
+  it('should calculate the total number of visitors per day', function(){
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    const actual = park.calculateVisitorsPerDay();
+    assert.strictEqual(actual, 180);
+  })
+
 });
