@@ -16,4 +16,29 @@ Park.prototype.removeDinosaur = function(dinosaur){
   }
 }
 
+Park.prototype.findMostPopularDinosaur = function(){
+result = null;
+highest_value = 0;
+for (dinosaur of this.dinosaurs){
+  if(dinosaur.guestsAttractedPerDay > highest_value){
+    highest_value = dinosaur.guestsAttractedPerDay;
+    result = dinosaur;
+  }
+}
+return result;
+}
+
+
 module.exports = Park;
+
+// Park.prototype.findMostPopularDinosaur = function(){
+//   result = null;
+//   highest_count = 0;
+//   for (dinosaur of this.dinosaurs){
+//     if (dinosaur.guestsAttractedPerDay > highest_count){
+//       highest_count = dinosaur.guestsAttractedPerDay;
+//       result = dinosaur;
+//     }
+//   }
+//   return result;
+// }

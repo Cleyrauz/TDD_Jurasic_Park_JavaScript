@@ -5,10 +5,15 @@ const Dinosaur = require('../models/dinosaur.js');
 describe('Park', function() {
 
     let park;
+    let dinosaur;
+    let dinosaur2;
+    let dinosaur3;
 
   beforeEach(function () {
     park = new Park('Jurasic World', 100);
     dinosaur = new Dinosaur('t-rex', 'carnivore', 50);
+    dinosaur2 = new Dinosaur('velociraptor', 'carnivore', 30);
+    dinosaur3 = new Dinosaur('long neck', 'herbivorous', 100);
   });
 
   it('should have a name', function() {
@@ -38,7 +43,12 @@ describe('Park', function() {
     assert.strictEqual(actual, 0);
   });
 
-  xit('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function(){
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    assert.strictEqual(park.findMostPopularDinosaur(), dinosaur3);
+  });
 
   xit('should be able to find all dinosaurs of a particular species');
 
