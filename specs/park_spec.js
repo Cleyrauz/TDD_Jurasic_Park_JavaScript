@@ -47,16 +47,25 @@ describe('Park', function() {
     park.addDinosaur(dinosaur);
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
-    assert.strictEqual(park.findMostPopularDinosaur(), dinosaur3);
+    const actual = park.findMostPopularDinosaur();
+    assert.strictEqual(actual, dinosaur3);
   });
 
   it('should be able to find all dinosaurs of a particular species', function(){
     park.addDinosaur(dinosaur);
     park.addDinosaur(dinosaur2);
     park.addDinosaur(dinosaur3);
-    assert.deepStrictEqual(park.findBySpecies('t-rex'), [dinosaur, dinosaur2]);
+    const actual = park.findBySpecies('t-rex')
+    assert.deepStrictEqual(actual, [dinosaur, dinosaur2]);
   });
 
-  xit('should be able to remove all dinosaurs of a particular species');
+  it('should be able to remove all dinosaurs of a particular species', function(){
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    park.addDinosaur(dinosaur3);
+    park.removeAllOfSpecies('t-rex');
+    const actual = park.dinosaurs.length;
+    assert.deepStrictEqual(actual, 1);
+  });
 
 });
