@@ -53,5 +53,9 @@ for(let dinosaur of this.dinosaurs){
 return visitorsPerDay;
 }
 
+Park.prototype.calculateVisitorsPerYear = function(){
+    return this.calculateVisitorsPerDay() * 365;
+}
+
 
 module.exports = Park;
