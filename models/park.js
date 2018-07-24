@@ -28,17 +28,15 @@ for (dinosaur of this.dinosaurs){
 return result;
 }
 
+Park.prototype.findBySpecies = function(species){
+  result = [];
+  for(dinosaur of this.dinosaurs){
+    if(dinosaur.species === species){
+      result.push(dinosaur);
+    }
+  }
+  return result;
+}
+
 
 module.exports = Park;
-
-// Park.prototype.findMostPopularDinosaur = function(){
-//   result = null;
-//   highest_count = 0;
-//   for (dinosaur of this.dinosaurs){
-//     if (dinosaur.guestsAttractedPerDay > highest_count){
-//       highest_count = dinosaur.guestsAttractedPerDay;
-//       result = dinosaur;
-//     }
-//   }
-//   return result;
-// }
